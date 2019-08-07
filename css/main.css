@@ -1,0 +1,61 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Roboto|Syncopate:700&display=swap');
+
+/* 
+font-family: 'Syncopate', sans-serif;
+font-family: 'Roboto', sans-serif;
+
+black #101010;
+green #13687c; 
+light green #c3d1d4;
+red #e93536;
+*/
+
+html, body {
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	color: #1a1a1a;
+}
+
+/* banner */
+.banner {
+	position: relative;
+	background-image: url("../img/home_background.jpg");
+	width: 100%;
+	height: 900px;
+}
+.banner::before {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 20%;
+	height: 100%;
+	background-color: #101010;
+	z-index: 999;
+}
+.banner .ban {
+	position: absolute;
+	z-index: 1000;
+	border: 1px solid blue;
+	top: 20%;
+	left: 10%;
+}
+.banner .ban-label {
+	color: white;
+}
+.banner .ban-label > span {
+	font-size: 0.875rem;
+	letter-spacing: 0.1rem;
+}
+.banner .ban-tit {
+	flex: 50% 0 0;
+	font-family: 'Syncopate', sans-serif;
+	font-size: 6rem;
+	letter-spacing: -0.1em;
+	line-height: 0.8em;
+	color: white;
+	border-top: 1px solid white;
+	padding: 2em 0;
+}
