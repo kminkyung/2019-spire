@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,30 +17,110 @@
 	<script src="../js/wow.min.js"></script>
 	<script src="../js/imagesloaded.pkgd.min.js"></script>
 </head>
+
 <body>
 	<!-- navigation -->
-	<nav class="navi">
+	<nav class="navi text-white">
 		<div class="navi-square">
-			<i class="fas fa-bars"></i>
+			<i class="fas fa-bars f-25"></i>
 		</div>
+		<ul class="navi-top">
+			<li>Spire</li>
+			<li class="solutions">SOLUTIONS<span>5</span>
+				<div class="navi-sub">MARITIME (AIS DATA)</div>
+				<div class="navi-sub">AVIATION (ADS-B DATA)</div>
+				<div class="navi-sub">AVIATION (ADS-B DATA)</div>
+				<div class="navi-sub">AVIATION (ADS-B DATA)</div>
+			</li>
+			<li class="suite">PRODUCT SUITE<span>6</span></li>
+			<li class="spire">SPIRE<span>6</span></li>
+			<!-- <li><span></span></li> -->
+		</ul>
 	</nav>
 	<!-- side bar -->
-	<aside class="sidebar"></aside>
-
+	<aside class="sidebar">
+			<div class="side-tit">SPIREPEDIA</div>
+		<ul class="side-bar">
+			<li class="side-logo"></li>
+			<li class="side-icon">
+				<img src="../img/spirepedia_wave.gif" class="w-50"></li>
+		</ul>
+		<ul class="side-clay">
+			<li class="side-icon">
+				<img src="../img/spirepedia_wave_clay.gif" class="w-50"></li>
+		</ul>
+		<ul class="side-black"></ul>
+	</aside>
 	<!-- banner -->
 	<header class="banner">
-		<div class="ban">
-			<h5 class="ban-label"><i class="far fa-clock mr-3"></i>24 / 7
-			<span>DATA & ANALYTICS</span></h5>
-			<h1 class="ban-tit">DATA&<br>ANALYTICS<br>FROMORBIT</h1>
-		</div>
+		<div class="ban-bg-img"></div>
+		<div class="ban-wrap">
+			<div class="ban">
+				<div class="ban-heading">
+					<h5 class="ban-label">
+						<i class="far fa-clock mr-3"></i>24 / 7</h5>
+					<span>DATA & ANALYTICS</span>
+				</div>
+				<h1 class="ban-tit">DATA &<br>ANALYTICS<br>FROM ORBIT</h1>
+				<div class="ban-text text-white f-1125 d-flex">
+					<div class="text-dummy"></div>
+					<div class="ban-txt pl-3">Spire is a data and analytics company that collects data from space to solve
+						problems on Earth. Owning and operating one of the largest satellite constellations in the world, Spire
+						identifies,tracks, and predicts the movement of the world's resources and weather systems so that businesses
+						and governments can make smart decisions.</div>
+				</div>
+			</div>
+			<div class="ban-dummy"></div>
+		</div> <!-- ban-wrap end -->
 	</header>
 
-	<!-- statistic -->
-	<article></article>
+	<!-- statistics -->
+	<article class="">
+		<div class="statis bg-grey">
+			<ul class="satellite">
+				<li class="stat-tit">Satellites In Orbit Right Now
+				</li>
+				<li class="stat-number">84</li>
+				<li class="stat-footer">Global Coverage: Equatorial, 51.6 deg, Polar, 83 deg, & 85 deg orbits</li>
+			</ul>
+			<ul class="station">
+				<li class="stat-tit">Active Ground Stations Today</li>
+				<li class="stat-number">30+</li>
+				<li class="stat-footer">Placed strategically around the entire globe</li>
+			</ul>
+		</div>
+	</article>
 
 	<!-- data -->
-	<section></section>
+	<section class="datas bg-grey">
+		<ul class="data-slides">
+			<li class="data-slide">
+				<div class="data-label"><i class="fas fa-ship mr-3"></i>MEET THE DATA</div>
+				<div class="data-info d-flex py-4">
+					<span class="data-index">01</span>
+					<div class="data-tit">MARITIME<br>DATA</div>
+					<div class="data-desc">Spire Maritime uses satellite "AIS" data and sophisticated APIs to provide maritime
+						awareness solutions for vessel tracking, ship monitoring, and for viewing historic "AIS" data and predicted
+						positions. We are doing more with the data you already use (like AIS). We are building intelligent
+						machine-learning algorithms that predict vessel locations and ETAs. And we are finding new sources of useful
+						maritime data (like advanced weather prediction methods).</div>
+				</div>
+			</li>
+			<li class="data-img position-relative mt-3">
+				<img src="../img/slide-1.jpg" class="w-100">
+				<div class="data-btn">
+					<button type="button" class="btn btn-explore">
+						<span class="bt-text">EXPLORE DATA</span>
+						<span class="btn-hover"></span></button>
+					<button type="button" class="btn btn-sample">
+						<span class="bt-text">SAMPLE DATA</span>
+						<span class="btn-hover"></span>
+						<i class="fas fa-arrow-down"></i></button>
+			</li>
+			</div>
+		</ul>
+		<div class="data-pager"></div>
+	</section>
 
 	<!-- article -->
 	<article></article>
@@ -55,7 +136,8 @@
 
 	<!-- footer -->
 	<footer></footer>
-	
+
 	<script src="../js/main.js"></script>
 </body>
+
 </html>
