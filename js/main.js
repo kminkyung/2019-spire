@@ -1,7 +1,13 @@
+//navi-square 
+$("navi-square").click(function(){
+
+});
+
+
 // sidebar scroll event
 $(window).scroll(function(){
 	var scTop = $(this).scrollTop();
-	if(scTop > 50) $(".side-black").stop().animate({"left": 0}, 1000);
+	if(scTop > 60) $(".side-black").stop().animate({"left": 0}, 1000);
 	else $(".side-black").stop().animate({"left": "-100%"}, 1000);
 	console.log(scTop);
 });

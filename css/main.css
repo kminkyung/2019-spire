@@ -82,7 +82,20 @@ font-size: 2rem;
 right: 0;
 position: fixed;
 z-index: 1200;
+cursor: pointer;
 }
+.navi-sqr {
+	position: fixed;
+	background-color: #101010;
+	color: white;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	right: -100%;
+	z-index: 55555;
+}
+	.sqr-exit {
+	}
 
 /* sidebar */
 .side-bar {
