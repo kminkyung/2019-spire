@@ -12,18 +12,24 @@ $(".sqr-exit > i").click(function(){
 //navi-top
 $(".navi-top > li").mouseenter(function(){
 	if($(this).index() > 0) $(this).css("color", "black");
-	$(this).find(".navi-sub").stop().animate({"top":"-5rem"}, 100, function(){
-			$(this).find(".line").stop().animate({"width":"90%"}, 300);
+	$(this).find(".navi-sub").stop().animate({"top":"0"}, 200, function(){
+			$(this).find(".line").stop().animate({"width":"90%"}, 200);
 	});
 });
 $(".navi-top > li").mouseleave(function(){
 	$(this).css("color", "white");
-	$(this).find(".navi-sub").stop().animate({"top":"-23rem"}, 100, function(){
-			$(this).find(".line").stop().animate({"width":0}, 500);
+	$(this).find(".navi-sub").stop().animate({"top":"-330%"}, 200, function(){
+			$(this).find(".line").stop().animate({"width":0}, 200);
 	});
 });
-// $(".navi-sub .sub-menu").hover(function(){
-// 	$(this).find(".line").css({"height":"25px"});
+// $(".navi-sub .sub-menu").mouseenter(function(){
+// 	if($(this).index() == 1) $(this).siblings(".line").stop().animate({"height":"25px"}, 100);
+// 	else if ($(this).index() == 6);
+// 	else $(this).children(".line").stop().animate({"height":"25px"}, 100);
+// });
+// $(".navi-sub .sub-menu").mouseleave(function(){
+// 	if($(this).index() == 1) $(this).siblings(".line").stop().animate({"height":0}, 100);
+// 	else $(this).children(".line").stop().animate({"height":0}, 100);
 // });
 
 // sidebar scroll event
@@ -70,18 +76,21 @@ var data = [
 	title: "MARITIME DATA", 
 	desc: "Spire Maritime uses satellite \"AIS\" data and sophisticated APIs to provide maritime awareness solutions for vessel tracking, ship monitoring, and for viewing historic \"AIS\" data and predicted positions. We are doing more with the data you already use (like AIS). We are building intelligent machine-learning algorithms that predict vessel locations and ETAs. And we are finding new sources of useful maritime data (like advanced weather prediction methods).", 
 	src: "../img/slide-1.jpg",
+	pager: "pg-prog"
 	},{
 	order: "02",
 	icon: "<i class=\"fas fa-plane\"></i>",
 	title: "AVIATION DATA",
 	desc: "Despite how safe the skies are, there are still large regions of the Earth where aircraft fall completely off the radar. In the wake of the disappearance of Malaysia Airlines 370, there is a renewed sense of urgency to establish new methods of aircraft surveillance to fill those gaps. Space-based ADS-B is the only way to reliably track aircraft over remote regions. Spire’s data can identify, track, and predict global aircraft traffic 24/7, anywhere in the world.",
-	src: "../img/slide-2.jpg"
+	src: "../img/slide-2.jpg",
+	pager: "pg-prog"
 	},{
 	order: "03",
 	icon: "<i class=\"fas fa-cloud\"></i>",
 	title: "WEATHER DATA",
 	desc: "Demand for accurate weather data is increasing as more people and business around the world are more frequently impacted by severe weather. Adequate warning systems have never been more important. Spire has built the world’s first commercial radio occultation processing system that can deliver fast, reliable data that can save lives.",
-	src: "../img/slide-3.jpg"
+	src: "../img/slide-3.jpg",
+	pager: "pg-prog"
 	}
 ];
 
@@ -120,7 +129,7 @@ function init() {
 		html += '</li>';
 		html += '</div>';
 		html += '</ul>';
-		pgHtml += '<li><span class="pg-prog"></span></li>';
+		pgHtml += '<li><span class=""></span></li>';
 	}
 	$(".data").append(html);
 	$(".data-pager").append(pgHtml);
@@ -146,24 +155,29 @@ function dataInit() {
 		$(".data-slides").eq(i).find(".data-desc").html(data[arr[i]].desc);
 		$(".data-slides").eq(i).find("img").attr("src", data[arr[i]].src);
 	}
+
 	$(".data-slides").css("left", "-100%");
 
 	for(var i=0; i < data.length; i++) {
+		$(".data-pager > li").eq(i).find("span").addClass(data[i].pager);
 		$(".data-pager > li").eq(i).text(data[i].order);
 	}
+
 } 
+
 
 slideAni();
 function slideAni() {
+	var pager = now + 1;
 	if(now == end) {
 		now = 0;
 	}
 	else {
 		now++;
 	}
-	$(".data-slides").stop().animate({"left":"-200%"}, 1000, dataInit);
-	$(".data-pager > li").eq(now).stop().animate(pgAct);
-	// var pager = now + 1;
+	$(".data-slides").stop().animate({"left":"-200%"}, 1500, dataInit);
+	$(".data-pager .pg-prog").eq(now).css({"height":"5px"}, 200);
+
 	
 	// console.log(now);
 }
@@ -188,10 +202,8 @@ $(".btn-sample").mouseleave(function(){
 });
 
 // data-pager progress bar
-function pgAct() {
-	$(".data-pager > li").click(function(){
-		$(this).find(".pg-prog").stop().animate({"height":"4px"}, 100);
-	});
-}
+// function pgAct() {
+// 	$(this).find(".pg-prog").stop().animate({"height":"4px"}, 100);
+// }
 
 
