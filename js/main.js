@@ -8,7 +8,7 @@ $(".sqr-exit > i").click(function(){
 
 //navi-top
 $(".navi-top > li").mouseenter(function(){
-	$(this).css("color", "black");
+	if($(this).index() > 0) $(this).css("color", "black");
 	$(this).find(".navi-sub").stop().animate({"top":"-5rem"}, 100, function(){
 			$(this).find(".line").stop().animate({"width":"90%"}, 300);
 	});
@@ -24,18 +24,25 @@ $(".navi-top > li").mouseleave(function(){
 // });
 
 // sidebar scroll event
-$(window).scroll(function(){
+var scrollChk = true;
+$(window).scroll(scrollFn);
+function scrollFn(){
 	var scTop = $(this).scrollTop();
 	if(scTop > 100) {
-		$(".side-black").stop().animate({"left": 0}, 1000);
-		$(".navi-top").stop().animate({"top": "-100%"}, 1000);
+		if(scrollChk) {
+			scrollChk = false;
+			$(".side-black").stop().animate({"left": 0}, 1000);
+			$(".navi-top").stop().animate({"top": "-100%"}, 1000);
+		}
 	}
 	else {
+		scrollChk = true;
 		$(".side-black").stop().animate({"left": "-100%"}, 1000);
 		$(".navi-top").stop().animate({"top": 0}, 1000);
 	}
 	// console.log(scTop);
-});
+}
+
 
 //side-bar hover event
 $(".side-bar").mouseenter(function(){
@@ -132,22 +139,27 @@ function dataInit() {
 
 slideInit();
 function slideInit() {
-	if(now == 0) arr[0] = end;
-	else arr[0] = now - 1;
-
-	for(var i=0; i<cnt; i++) {
-		if(i + now > end) arr[(i+1)] = i + now - end - 1;
-		else arr[(i+1)] = now + i;
+	for(var i=0; i<slideCnt; i++) {
+		if(i == 0) {
+			if(now == 0) arr[i] = end;
+			else arr[i] = now - 1;
+		}
+		else {
+			if(now + i - 1 > end) arr[i] = now + i - 2 - end;
+			else arr[i] = now + i - 1;
+		}
 	}
-	$(".data-slides").css("left", "0");
+	console.log(arr);
+	$(".data-slides").css("left", "-100%");
+};
+
+function slideAni() {
 	if (dir == "L") {
 		if(now == end) now = 0;
 		else now++;
 	}
-};
-
-function slideAni() {
-	$(".data-slides").stop().animate({"left":"-100%"}, speed, slideInit);
+	console.log(now);
+	$(".data-slides").stop().animate({"left":"-200%"}, speed, slideInit);
 }
 
 interval = setInterval(slideAni, gap);
