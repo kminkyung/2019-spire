@@ -172,7 +172,7 @@ html, body {
 }
 	.banner .ban-bg-img {
 		background-image: url("../img/home_background.jpg");
-		background-attachment: fixed;
+		background-attachment: scroll;
 		background-size: cover;
 		height: 1000px;
 		filter: grayscale(8%) brightness(50%);
@@ -270,7 +270,7 @@ html, body {
 /* data */
 .datas {
 	background-color: #eee;
-	padding: 7rem 0;
+	padding: 7rem 0 16rem 0;
 	width: 100%;
 	position: relative;
 }
@@ -388,7 +388,7 @@ html, body {
 		}
 		.data-pager .pg-prog {
 			position: absolute;
-			height: 50px;
+			height: 5px;
 			width: 100%;
 			bottom: 1.5rem;
 			background-color: black;
@@ -398,16 +398,22 @@ html, body {
 .articles {
 	background-image: url(../img/background-2.jpg);
 	background-attachment: fixed;
-	height: 500px;
+	background-repeat: no-repeat;
+	height: 900px;
+	position: relative;
 }
 .articles .art-cont {
 	background-color: white;
 	margin: 0 16% 0 20%;
 	padding: 4rem;
+	position: absolute;
+	top: -10%;
+	width: 65%;
+	z-index: 10000;
 }
 .art-cont .art-head {
 	display: flex;
-	padding: 0.8rem 0 3rem 0;
+	padding: 0.7rem 0 3rem 0;
 	border-top: 1px solid black;
 	border-bottom: 1px solid black;
 }
@@ -419,4 +425,29 @@ html, body {
 	font-family: 'Syncopate', sans-serif;
 	flex: 80% 0 1;
 	/* border: 1px solid gray; */
+}
+.art-footer {
+	font-size: 0.875rem;
+	color: #444;
+}
+.btn-read {
+	bottom: 0;
+	position: absolute;
+	font-family: 'Syncopate', sans-serif;
+	letter-spacing: -0.10rem;
+	font-size: 0.75rem;
+	border: none;
+	border-radius: 0;
+	padding: 1rem 1.8rem;
+	background-color: black;
+	color: white;
+	right: 15%;
+}
+.btn-read .btn-hover {
+	border: 3px solid red;
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	top: 0;
+	z-index: 2000;
 }

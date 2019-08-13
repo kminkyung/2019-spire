@@ -129,10 +129,11 @@ function init() {
 		html += '</li>';
 		html += '</div>';
 		html += '</ul>';
-		pgHtml += '<li><span class=""></span></li>';
+		pgHtml += '<li><span class="pg-prog"></span></li>';
 	}
 	$(".data").append(html);
 	$(".data-pager").append(pgHtml);
+	console.log(pgHtml);
 };
 // console.log(arr);
 
@@ -159,11 +160,16 @@ function dataInit() {
 	$(".data-slides").css("left", "-100%");
 
 	for(var i=0; i < data.length; i++) {
-		$(".data-pager > li").eq(i).find("span").addClass(data[i].pager);
 		$(".data-pager > li").eq(i).text(data[i].order);
 	}
-
 } 
+// data-pager progress bar
+function pgAct() {
+	$(this).stop().animate({"height":"4px"}, 100);
+}
+$(".data-pager > li").click(function(){
+	$(this).find(".pg-prog").stop().animate({"height":"4px"}, 100);
+});
 
 
 slideAni();
@@ -177,8 +183,7 @@ function slideAni() {
 	}
 	$(".data-slides").stop().animate({"left":"-200%"}, 1500, dataInit);
 	$(".data-pager .pg-prog").eq(now).css({"height":"5px"}, 200);
-
-	
+		
 	// console.log(now);
 }
 
@@ -201,9 +206,6 @@ $(".btn-sample").mouseleave(function(){
 	$(this).find(".btn-hover").stop().animate({"height":0}, 100);
 });
 
-// data-pager progress bar
-// function pgAct() {
-// 	$(this).find(".pg-prog").stop().animate({"height":"4px"}, 100);
-// }
+
 
 
