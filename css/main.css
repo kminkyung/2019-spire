@@ -397,7 +397,7 @@ html, body {
 /* article */
 .articles {
 	background-image: url(../img/background-2.jpg);
-	background-attachment: fixed;
+	background-attachment: scroll;
 	background-repeat: no-repeat;
 	height: 900px;
 	position: relative;
@@ -443,11 +443,19 @@ html, body {
 	color: white;
 	right: 15%;
 }
-.btn-read .btn-hover {
-	border: 3px solid red;
-	width: 100px;
-	height: 100px;
+.btn-read .read-black {
+	color: black;
+	display: none;
+	position: relative;
+	z-index: 40;
+}
+.btn-read .read-hover {
+	/* border: 3px solid red; */
+	width: 100%;
+	height: 1px;
 	position: absolute;
 	top: 0;
-	z-index: 2000;
+	right: 0;
+	background-color: white;
+	z-index: 0;
 }

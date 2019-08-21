@@ -183,7 +183,6 @@ function slideAni() {
 	}
 	$(".data-slides").stop().animate({"left":"-200%"}, 1500, dataInit);
 	$(".data-pager .pg-prog").eq(now).css({"height":"5px"}, 200);
-		
 	// console.log(now);
 }
 
@@ -206,6 +205,17 @@ $(".btn-sample").mouseleave(function(){
 	$(this).find(".btn-hover").stop().animate({"height":0}, 100);
 });
 
+// read button hover event 
+$(".btn-read").mouseenter(function(){
+	$(this).find(".read-black").css({"display":"inline", "color":"black"});
+	$(this).find(".read-white").css("display", "none");
+	$(this).find(".read-hover").stop().animate({"height":"100%"}, 200)
+});
+$(".btn-read").mouseleave(function(){
+	$(this).find(".read-black").css("display", "none");
+	$(this).find(".read-white").css("display", "inline");
+	$(this).find(".read-hover").stop().animate({"height":"1px"}, 200)
+});
 
 
 
