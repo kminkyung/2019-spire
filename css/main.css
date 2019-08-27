@@ -213,8 +213,9 @@ html, body {
 				letter-spacing: 0.1em;
 			}
 			.ban .ban-heading span {
-				font-size: 0.8em;
-				letter-spacing: 0.2em;
+				font-size: 0.75rem;
+				letter-spacing: 0.15rem;
+				font-family: 'Roboto Condensed', sans-serif;
 			}
 		.ban .ban-tit {
 			flex: 50% 0 0;
@@ -235,6 +236,7 @@ html, body {
 			}
 			.ban-txt {
 				font-weight: 500;
+				font-size: 0.8em;
 			}
 
 /* statistics */
@@ -289,11 +291,12 @@ html, body {
 		/* border: 1px solid coral; */
 	}
 	.data-slides .data-label {
-		font-size: 1rem;
+		font-size: 0.875rem;
 		letter-spacing: 0.1rem;
 		padding: 0.75rem 0;
 		border-top: 1px solid #1a1a1a;
 		border-bottom: 1px solid #1a1a1a;
+		font-family: 'Roboto Condensed', sans-serif;
 	}
 	.data-label > i {
 		font-size: 1.25rem;
@@ -404,12 +407,13 @@ html, body {
 }
 .articles .art-cont {
 	background-color: white;
-	margin: 0 16% 0 20%;
+	margin: 0 16rem 0 20rem;
 	padding: 4rem;
 	position: absolute;
 	top: -10%;
 	width: 65%;
 	z-index: 10000;
+	/* border: 1px solid red; */
 }
 .art-cont .art-head {
 	display: flex;
@@ -427,7 +431,8 @@ html, body {
 	/* border: 1px solid gray; */
 }
 .art-footer {
-	font-size: 0.875rem;
+	margin-top: 0.3rem;
+	font-size: 0.68rem;
 	color: #444;
 }
 .btn-read {
@@ -459,3 +464,29 @@ html, body {
 	background-color: white;
 	z-index: 0;
 }
+
+.lemur-wrap {
+	margin-left: 20rem;
+}
+
+.lemur-wrap .lemur-label {
+	font-size: 0.875rem;
+	letter-spacing: 0.1rem;
+	padding: 0.5rem 0;
+	border-top: 1px solid #1a1a1a;
+	font-family: 'Roboto Condensed', sans-serif;
+}
+.lemur-wrap .lemur-tit {
+	/* flex: 50% 0 0; */
+	font-family: 'Syncopate', sans-serif;
+	font-size: 9em;
+	letter-spacing: -0.06em;
+	line-height: 0.8em;
+	color: black;
+	border-top: 1px solid black;
+	padding: 0.1em 0;
+}
+.lemur-wrap .dummy {
+	flex: 0 0 60%;
+}
+
